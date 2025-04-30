@@ -3,17 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
 
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.automatingtextprocessing.controller.MainController">
-    <ToolBar>
-        <Button text="Load File" onAction="#handleLoadFile"/>
-        <Button text="Save File" onAction="#handleSaveFile"/>
-        <Button text="Search" onAction="#handleSearch"/>
-        <Button text="Replace" onAction="#handleReplace"/>
-    </ToolBar>
+    <top>
+        <ToolBar>
+            <Button text="Load File" onAction="#handleLoadFile"/>
+            <Button text="Save File" onAction="#handleSaveFile"/>
+            <Button text="Search" onAction="#handleSearch"/>
+            <Button text="Replace" onAction="#handleReplace"/>
+        </ToolBar>
+    </top>
 
     <center>
         <TextArea fx:id="textArea" promptText="Enter or load your text here..." wrapText="true" />
