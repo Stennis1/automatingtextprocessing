@@ -2,6 +2,7 @@ package com.example.automatingtextprocessing.controller;
 
 import com.example.automatingtextprocessing.model.FileUtils;
 import com.example.automatingtextprocessing.model.RegexUtils;
+import com.example.automatingtextprocessing.model.TextAnalysis;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -9,6 +10,7 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class MainController {
 
@@ -20,6 +22,22 @@ public class MainController {
 
     @FXML
     private TextField textField;
+
+    @FXML
+    private void handleAnalyzeText(){
+        String text = textArea.getText();
+        Map<String, Long> freqMap = TextAnalysis.wordFrequency(text);
+        List<Map.Entry<String, Long>> topWords = TextAnalysis.topNWords(freqMap, 10);
+        long sentences = TextAnalysis.sentenceCount(text);
+
+        StringBuilder result = new StringBuilder("Text Summary: \n");
+        result.append("Total sentences: ").append(sentences).append("\n\n");
+        result.append("Top 10 Frequent words:\n");
+        topWords.forEach(entry -> result.append(entry.getKey()).
+                append(": ").append(entry.getKey()).append("\n"));
+
+        showAlert(result.toString());
+    }
 
     @FXML
     private void handleLoadFile() {

@@ -5,15 +5,11 @@
 <?import javafx.scene.layout.*?>
 
 
+<?import javafx.scene.text.Text?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.automatingtextprocessing.controller.MainController">
     <top>
-        <ToolBar>
-            <Button text="Load File" onAction="#handleLoadFile"/>
-            <Button text="Save File" onAction="#handleSaveFile"/>
-            <Button text="Search" onAction="#handleSearch"/>
-            <Button text="Replace" onAction="#handleReplace"/>
-        </ToolBar>
+        <Text>Data Flow Solutions - Automating Text Processing Platform</Text>
     </top>
 
     <center>
@@ -21,12 +17,26 @@
     </center>
 
     <bottom>
+        <ToolBar>
+                <Button text="Load File" onAction="#handleLoadFile"/>
+                <Button text="Save File" onAction="#handleSaveFile"/>
+                <Button text="Search" onAction="#handleSearch"/>
+                <Button text="Replace" onAction="#handleReplace"/>
+        </ToolBar>
+
         <HBox spacing="10.0">
             <padding>
                 <Insets top="10.0" bottom="10.0" left="10.0" right="10.0"/>
             </padding>
             <Label text="Regex Pattern:"/>
             <TextField fx:id="regexField" promptText="Enter regex..." />
+
+            <ToolBar>
+                    <Button text="Load File" onAction="#handleLoadFile"/>
+                    <Button text="Save File" onAction="#handleSaveFile"/>
+                    <Button text="Search" onAction="#handleSearch"/>
+                    <Button text="Replace" onAction="#handleReplace"/>
+            </ToolBar>
         </HBox>
     </bottom>
 </BorderPane>
