@@ -7,37 +7,66 @@
 
 <?import javafx.scene.text.Text?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.automatingtextprocessing.controller.MainController">
+            fx:controller="com.example.automatingtextprocessing.controller.MainController"
+                prefWidth="800" prefHeight="600">
+
+    <!--  Top: Title  -->
     <top>
-        <Text>Data Flow Solutions - Automating Text Processing Platform</Text>
+        <HBox alignment="CENTER">
+            <padding><Insets top="20" bottom="20" /></padding>
+            <Text text="Data Flow Solutions - Automating Text Processing Platform"
+            style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        </HBox>
     </top>
 
-    <center>
-        <TextArea fx:id="textArea" promptText="Enter or load your text here..." wrapText="true" />
-    </center>
 
-    <bottom>
-        <ToolBar>
+    <!--    Center: Text Area and Main Action Buttons    -->
+    <center>
+        <VBox spacing="10.0">
+            <padding><Insets right="10.0" left="10.0" top="10.0" bottom="10.0" /></padding>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="400">
+                <TextArea fx:id="textArea" promptText="Enter or load your text here..."
+                          wrapText="true" prefHeight="200" prefWidth="200" />
+            </ScrollPane>
+
+            <HBox spacing="10.0" alignment="CENTER" >
+                <padding>
+                    <Insets top="10" bottom="10" />
+                </padding>
+                <Label text="Enter regex: " style="-fx-font-weight: bold;"/>
+                <TextField fx:id="regexField" promptText="Enter regex pattern" prefWidth="300" />
+            </HBox>
+
+            <HBox spacing="10.0" alignment="center">
                 <Button text="Load File" onAction="#handleLoadFile"/>
                 <Button text="Save File" onAction="#handleSaveFile"/>
                 <Button text="Search" onAction="#handleSearch"/>
-                <Button text="Replace" onAction="#handleReplace"/>
-        </ToolBar>
+                <Button text="Analyze Text"  onAction="#handleAnalyzeText" />
+            </HBox>
+        </VBox>
+    </center>
 
-        <HBox spacing="10.0">
+
+    <!--  File and Regex Controls  -->
+    <bottom>
+        <VBox spacing="10.0">
             <padding>
-                <Insets top="10.0" bottom="10.0" left="10.0" right="10.0"/>
+                <Insets top="10.0" bottom="10.0" right="10.0" left="10.0" />
             </padding>
-            <Label text="Regex Pattern:"/>
-            <TextField fx:id="regexField" promptText="Enter regex..." />
-
-            <ToolBar>
-                    <Button text="Load File" onAction="#handleLoadFile"/>
-                    <Button text="Save File" onAction="#handleSaveFile"/>
-                    <Button text="Search" onAction="#handleSearch"/>
+            <HBox spacing="10.0" alignment="CENTER">
+                <padding>
+                    <Insets bottom="30.0" />
+                </padding>
+                    <Button text="Add Entry" onAction="#handleAddEntry" />
+                    <Button text="Show Entries" onAction="#handleShowEntries" />
+                    <Button text="Clear Entries" onAction="#handleClearEntries" />
                     <Button text="Replace" onAction="#handleReplace"/>
-            </ToolBar>
-        </HBox>
+            </HBox>
+
+            <HBox>
+                <Text text="DataFlow Solutions - Copyright 2025"  />
+            </HBox>
+        </VBox>
     </bottom>
 </BorderPane>
 

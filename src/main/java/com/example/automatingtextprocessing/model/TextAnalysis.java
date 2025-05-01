@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class TextAnalysis {
 
     public static Map<String, Long> wordFrequency(String text) {
+        if (text == null || text.isBlank()) return Map.of();
         return Arrays.stream(text.toLowerCase().split("\\W+")).filter(word -> !word.isEmpty()).
                 collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
@@ -21,5 +22,9 @@ public class TextAnalysis {
     public static long sentenceCount(String text) {
         return Arrays.stream(text.split("[.!?]")).filter(
                 sentence -> !sentence.trim().isEmpty()).count();
+    }
+
+    public static long wordCount(String text) {
+        return Arrays.stream(text.split("\\W+")).filter(word -> !word.isEmpty()).count();
     }
 }

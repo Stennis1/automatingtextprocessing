@@ -1,0 +1,11 @@
+2025-05-01T17:24:54.159789093 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:25:07.259484937 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:27:25.491462912 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:27:30.619825699 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:28:19.583989458 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:29:02.936499963 - Failed to analyze textCannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T17:39:48.105064496 - Failed to analyze text - Cannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T20:40:08.478771338 - Failed to analyze text - Cannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T20:41:47.912120166 - Failed to analyze text - Cannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T20:41:58.322532977 - Failed to analyze text - Cannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
+2025-05-01T21:03:41.402058386 - Failed to analyze text - Cannot invoke "javafx.scene.control.Label.setText(String)" because "this.wordCountLabel" is null
