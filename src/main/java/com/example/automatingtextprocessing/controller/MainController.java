@@ -1,5 +1,6 @@
 package com.example.automatingtextprocessing.controller;
 
+import com.example.automatingtextprocessing.model.DataEntry;
 import com.example.automatingtextprocessing.model.FileUtils;
 import com.example.automatingtextprocessing.model.RegexUtils;
 import com.example.automatingtextprocessing.model.TextAnalysis;
@@ -96,4 +97,34 @@ public class MainController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    private final DataManager dataManager = new DataManager();
+
+    @FXML
+    private void handleAddEntry() {
+        String key = prompt("Enter key: ");
+        String value = prompt("Enter value: ");
+
+        if (key != null && value != null) {
+            boolean added = dataManager.addEntry(new DataEntry(key, value));
+            showAlert(added ? "Entry added" : "Duplicate entry not added.");
+        }
+    }
+
+    private String prompt(String s) {
+    }
+
+    @FXML
+    private void handleShowEntries() {
+        StringBuilder builder = new StringBuilder("Data Entries:\n");
+        dataManager.getAllEntries().forEach(e -> builder.append(e).append("\n"));
+        showAlert(builder.toString());
+    }
+
+    @FXML
+    private void handleClearEntries() {
+        dataManager.clearAllEntries();
+        showAlert("All Entries cleared!");
+    }
+
 }
