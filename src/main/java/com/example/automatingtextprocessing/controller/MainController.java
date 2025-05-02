@@ -62,19 +62,20 @@ public class MainController {
             String text = textArea.getText();
             Map<String, Long> freqMap = TextAnalysis.wordFrequency(text);
             List<Map.Entry<String, Long>> topWords = TextAnalysis.topNWords(freqMap, 3);
+
             long sentences = TextAnalysis.sentenceCount(text);
             long count = TextAnalysis.wordCount(text);
 
-            wordCountLabel.setText("Word Count: " + count);
-
             StringBuilder result = new StringBuilder("Text Summary:\n");
-            result.append("Total sentences: ").append(sentences).append("\n\n");
+            result.append("Total sentences: ").append(sentences).append("\n");
+            result.append("Total words: ").append(count).append("\n\n");
             result.append("Top 3 Frequent Words:\n");
             topWords.forEach(entry -> result.append(entry.getKey())
                     .append(": ").append(entry.getValue()).append("\n"));
 
             showAlert(result.toString());
         } catch (Exception e) {
+            e.printStackTrace();
             logError("Failed to analyze text", e);
             showAlert("Error analyzing text. Please try again.");
         }
@@ -161,6 +162,15 @@ public class MainController {
         if (key != null && value != null) {
             boolean added = dataManager.addEntry(new DataEntry(key, value));
             showAlert(added ? "Entry added." : "Duplicate entry. Not added.");
+        }
+    }
+
+    @FXML
+    private void handleRemoveEntry() {
+        String keyToRemove = prompt("Enter key to remove:");
+        if (keyToRemove != null) {
+            boolean removed = dataManager.removeEntry(keyToRemove);
+            showAlert(removed ? "Entry removed" : "Key not found!");
         }
     }
 

@@ -34,7 +34,7 @@
                     <Insets top="10" bottom="10" />
                 </padding>
                 <Label text="Enter regex: " style="-fx-font-weight: bold;"/>
-                <TextField fx:id="regexField" promptText="Enter regex pattern" prefWidth="300" />
+                <TextField fx:id="regexField" promptText="Enter regex pattern" prefWidth="200" />
             </HBox>
 
             <HBox spacing="10.0" alignment="center">
@@ -42,6 +42,7 @@
                 <Button text="Save File" onAction="#handleSaveFile"/>
                 <Button text="Search" onAction="#handleSearch"/>
                 <Button text="Analyze Text"  onAction="#handleAnalyzeText" />
+                <Button text="Replace" onAction="#handleReplace"/>
             </HBox>
         </VBox>
     </center>
@@ -53,18 +54,23 @@
             <padding>
                 <Insets top="10.0" bottom="10.0" right="10.0" left="10.0" />
             </padding>
+
+            <HBox spacing="10.0" alignment="CENTER">
+                <Text text="Data Entry Panel" textAlignment="CENTER" style="-fx-font-size: 16;" />
+            </HBox>
+
             <HBox spacing="10.0" alignment="CENTER">
                 <padding>
                     <Insets bottom="30.0" />
                 </padding>
                     <Button text="Add Entry" onAction="#handleAddEntry" />
+                    <Button text="Remove Entry" onAction="#handleRemoveEntry" />
                     <Button text="Show Entries" onAction="#handleShowEntries" />
                     <Button text="Clear Entries" onAction="#handleClearEntries" />
-                    <Button text="Replace" onAction="#handleReplace"/>
             </HBox>
 
             <HBox>
-                <Text text="DataFlow Solutions - Copyright 2025"  />
+                <Text text="Data Flow Solutions - Copyright 2025"  />
             </HBox>
         </VBox>
     </bottom>

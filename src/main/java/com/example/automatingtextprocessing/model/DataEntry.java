@@ -31,8 +31,7 @@ public class DataEntry {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof DataEntry)) return false;
-        DataEntry entry = (DataEntry) o;
+        if (!(o instanceof DataEntry entry)) return false;
         return key.equals(entry.key) && value.equals(entry.value);
     }
 

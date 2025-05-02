@@ -11,8 +11,9 @@ public class DataManager {
         return entries.add(entry);
     }
 
-    public boolean removeEntry(DataEntry entry) {
-        return entries.remove(entry);
+    public boolean removeEntry(String key) {
+        return entries.removeIf(entry ->
+                entry.getKey().equalsIgnoreCase(key));
     }
 
     public Set<DataEntry> getAllEntries() {
